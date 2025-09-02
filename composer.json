@@ -3,7 +3,8 @@
     "description": "Extra type casts for WPORM models, providing advanced validation and sanitization using WordPress functions.",
     "type": "library",
     "require": {
-        "mjkhajeh/wporm": "^2.6"
+        "mjkhajeh/wporm": "^2.6",
+        "php": ">=7.4"
     },
     "license": "MIT",
     "autoload": {
@@ -16,6 +17,5 @@
             "name": "MohammadJafar Khajeh",
             "email": "mjkhajehg@gmail.com"
         }
-    ],
-    "minimum-stability": "stable"
+    ]
 }
