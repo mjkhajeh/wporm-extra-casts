@@ -1,0 +1,21 @@
+{
+    "name": "mjkhajeh/wporm-extra-casts",
+    "description": "Extra type casts for WPORM models, providing advanced validation and sanitization using WordPress functions.",
+    "type": "library",
+    "require": {
+        "mjkhajeh/wporm": "^2.6"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MJ\\WPROM\\ExtraCasts\\": ""
+        }
+    },
+    "authors": [
+        {
+            "name": "MohammadJafar Khajeh",
+            "email": "mjkhajehg@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
