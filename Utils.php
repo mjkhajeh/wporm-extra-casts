@@ -69,4 +69,29 @@ class Utils {
 		}
 		return $sanitize_after ? self::convert_chars( $string, $sanitize_after, [], false ) : $string;
 	}
+
+	/**
+	 * Convert value to boolean
+	 *
+	 * @param mixed $value
+	 * @return boolean
+	 */
+	public static function to_bool( $value ) {
+		if( is_wp_error( $value ) || is_null( $value ) ) return false;
+		$value = strtolower( $value );
+		if( in_array( $value, ["false", 'no', 'off', '0'] ) ) return false;
+		if( in_array( $value, ["true", 'yes', 'on', '1'] ) ) return true;
+
+		return wp_validate_boolean( $value );
+	}
+
+	/**
+	 * Check if a string is a valid phone number or not
+	 *
+	 * @param integer|string $string
+	 * @return boolean
+	 */
+	public static function is_phone( $string ) {
+		return self::to_bool( preg_match( '/^(09[0-9]{9})$/', Sanitizers::phone( $string ) ) );
+	}
 }

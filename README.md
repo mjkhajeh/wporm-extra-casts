@@ -36,6 +36,7 @@ composer require mjkhajeh/wporm-extra-casts
 | UserID       | Ensures values are valid WordPress user IDs                                                 | `absint`                  |
 | CustomEnum   | Restricts values to a defined set, with sanitization                                        | `sanitize_text_field`     |
 | Base64       | Handles base64 encoding/decoding                                                            | `base64_encode`, `base64_decode` |
+| Mobile       | Validates and normalizes mobile phone numbers                                               | `sanitize_text_field`     |
 
 ## Usage
 
