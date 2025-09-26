@@ -92,6 +92,10 @@ class Utils {
 	 * @return boolean
 	 */
 	public static function is_phone( $string ) {
-		return self::to_bool( preg_match( '/^(09[0-9]{9})$/', Sanitizers::phone( $string ) ) );
+		$string = self::convert_chars( $string );
+		$string = str_replace( [" ", "(", ")", "+", "-"], "", $string );
+		$string = substr( $string, 0, 2 ) == "98" ? substr( $string, 2 ) : $string;
+		$string = substr( $string, 0, 1 ) === '0' ? $string : "0{$string}";
+		return self::to_bool( preg_match( '/^(09[0-9]{9})$/', $string ) );
 	}
 }
